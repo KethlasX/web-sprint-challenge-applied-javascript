@@ -4,9 +4,9 @@ const Tabs = (topics) => {
   topicsWrapper.classList.add('topics');
   topicsWrapper.appendChild();
 
-  topics.forEach('element' => {
+  topics.forEach(element => {
     const topic = document.createElement('div');
-    topic.textContent = 'element';
+    topic.textContent = element;
     topic.classList.add('tab');
     topicsWrapper.appendChild(topic);
   })
@@ -30,6 +30,15 @@ const Tabs = (topics) => {
 }
 
 const tabsAppender = (selector) => {
+  const tabsSection = document.querySelector(selector);
+  axios.get('http://localhost:5001/api/topics').then(res => {
+    const tabsObject = res.data.topics;
+    console.log(tabsObject);
+
+    const tabsElement = Tabs(topics);
+    tabsSection.appendChild(tabsElement);
+  })
+  
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
