@@ -47,7 +47,7 @@ const Card = (article) => {
   //
 }
 
-Card.addEventListener('click', console.log(card.cardHeadline));
+Card.addEventListener('click', console.log(Card.cardHeadline));
 
 const cardAppender = (selector) => {
   

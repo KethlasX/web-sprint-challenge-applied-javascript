@@ -34,7 +34,7 @@ const Header = (title, date, temp) => {
 
 const headerAppender = (selector) => {
   const headerSection = document.querySelector(selector);
-  
+
   }
   
   // TASK 2
@@ -49,6 +49,5 @@ const headerAppender = (selector) => {
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
-}
 
 export { Header, headerAppender }
