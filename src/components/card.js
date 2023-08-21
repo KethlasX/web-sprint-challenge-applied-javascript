@@ -20,7 +20,6 @@ const Card = (article) => {
   cardAuthorWrap.appendChild(cardAuthorName);
 
   cardImg.src = article.authorPhoto;
-  cardImg.alt = `an image of ${authorName}`;
   cardHeadline.textContent = article.headline;
   cardAuthorName.textContent = article.authorName;
 
@@ -47,14 +46,13 @@ const Card = (article) => {
   //
 }
 
-Card.addEventListener('click', console.log(Card.cardHeadline));
+// Card.addEventListener('click', console.log(Card.cardHeadline));
 
 const cardAppender = (selector) => {
   
   const cardsSection = document.querySelector(selector);
   axios.get('http://localhost:5001/api/articles').then(res => {
     const articlesObject = res.data.articles;
-    console.log(articlesObject);
     for (let key in articlesObject) {
       for (let article of articlesObject[key]) {
         const cardElement = Card(article);
