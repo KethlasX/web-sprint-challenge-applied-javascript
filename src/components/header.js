@@ -32,8 +32,9 @@ const Header = (title, date, temp) => {
   //
 }
 
+
 const headerAppender = (selector) => {
-  const headerSection = document.querySelector(selector);
+  document.querySelector(selector).appendChild(Header('the info', '11/26/25', '35'))
 
   }
   
