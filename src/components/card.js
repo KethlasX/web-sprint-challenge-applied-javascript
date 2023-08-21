@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = (article) => {
   const cardWrap = document.createElement('div');
   const cardHeadline = document.createElement('div');
@@ -48,6 +50,19 @@ const Card = (article) => {
 Card.addEventListener('click', console.log(card.cardHeadline));
 
 const cardAppender = (selector) => {
+  
+  const cardsSection = document.querySelector(selector);
+  axios.get('http://localhost:5001/api/articles').then(res => {
+    const articlesObject = res.data.articles;
+    console.log(articlesObject);
+    for (let key in articlesObject) {
+      for (let article of articlesObject[key]) {
+        const cardElement = Card(article);
+        cardsSection.appendChild(cardElement);
+      }
+    }
+  })
+  
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
