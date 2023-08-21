@@ -33,7 +33,9 @@ const Header = (title, date, temp) => {
 }
 
 const headerAppender = (selector) => {
+  const headerSection = document.querySelector(selector);
   
+  }
   
   // TASK 2
   // ---------------------

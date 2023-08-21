@@ -2,7 +2,7 @@ const Tabs = (topics) => {
   const topicsWrapper = document.createElement('div');
   
   topicsWrapper.classList.add('topics');
-  topicsWrapper.appendChild()
+  topicsWrapper.appendChild();
 
   topics.forEach('element' => {
     const topic = document.createElement('div');
